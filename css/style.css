@@ -11,15 +11,15 @@
 }
 
 .questao-errada{
-    background: #ff585b;
-  /* border: solid 2px red;*/
+  /*  background: #ff585b;*/
+   border: solid 2px red;
 
 
 }
 
 .questao-certa{
-   /*border: solid 2px green;*/
-    background: #aaff51;
+  border: solid 2px green;
+    /* background: #aaff51;*/
 }
 .nome-questao{
     margin: 0 0 0 20;
