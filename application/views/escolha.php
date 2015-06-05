@@ -1,43 +1,43 @@
 <html>
 <head>
-	<title></title>
+    <title> test </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo base_url('css/font-awesome.css') ?>" >
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
 </head>
 <body>
+    <div class= "container">
+        <legend>Escolha dos conteúdos</legend>
+        <div class="menu">
+            <?php
+            echo form_open('site/processarDados');?>
+            <div class="escolha-conteudo">
+                <input type="checkbox" name="assunto[]" value="1">Aritmética
+            </div>
+            <div class="escolha-conteudo">
+                <input type="checkbox" name="assunto[]" value="2">Álgebra
+            </div>
+            <div class="escolha-conteudo">
+                <input type="checkbox" name="assunto[]" value="3">Geometria
+            </div>
+            <div class="escolha-conteudo">
+                <input type="checkbox" name="assunto[]" value="4">Geometria Analítica
+            </div>
+            <div class="escolha-conteudo">
+                <input type="checkbox" name="assunto[]" value="5">Porcentagem
+            </div>
+            <div class="escolha-conteudo">
+                <input type="checkbox" name="assunto[]" value="6">Trigonometria
+            </div>
+            <button class="btn btn-primary" type="submit" class="">Começar!  <i class="fa fa-pencil"></i></button>
+            </div>
 
-
-
-
-
-
-<br>
-fim
-<br><br><br>
-           <?php
-           echo form_open('site/envia_dados');
-           $opcoes = array(
-               'bola' => 'Bolinha',
-               'cao' => 'cachorro',
-
-
-           );
-          echo form_dropdown('grande_area',$opcoes,'bola');
-           echo form_input();
-
-
-
-
-
-
-           echo form_submit('gerar', 'Gerar');
-       /*    $lista= [];
-           foreach($records as $r) {
-               $lista[$r->id] = $r->nome;
-           }
-           echo form_dropdown('options',$lista,'teste       ','Options');
-             echo "<br><br>";
-         */  echo form_close();
-
-           ?>
-
+            <?php
+            echo form_close();
+            ?>
+</div>
 </body>
 </html>

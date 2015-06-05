@@ -19,48 +19,25 @@ class Site extends CI_Controller {
     }
     public function index(){
         $this->load->view('escolha');
-
-
     }
+
+
 
     public function aprender(){
         $this->load->view('repopulate');
     }
-
-    public function submeter()
-    {
-       echo '<h1>'.current_url().'</h1>';
-
-        /*var_dump($_POST);
-
-         $variavel = $this->input->post("sample");
-         var_dump($variavel);
-
-         $variavel = $this->input->post("valdir");
-         var_dump($variavel);
-
-         $variavel = $this->input->post("2");
-         var_dump($variavel);
- *//*
-        if (($this->input->post('1'))==true){
-            echo 'a resposta da 1 questao foi '.$this->input->post('1');
-        }
-*/
-        for ($i = 0; $i < ($this->input->post('num')); $i++) {
-            $id_questao = $this->input->post($i);
-            $alternativa_marcada = $this->input->post('quest' . $id_questao);
-            $alternativa_certa = $this->questao_model->obterResposta($id_questao);
-            if ($alternativa_marcada == $alternativa_certa) {
-                echo 'Você acertou a questão a questão ' . ($i + 1).'<br>';
-            }
-            else{
-                echo 'Você errou a questão ' . ($i + 1).', a alternativa correta era '.$alternativa_certa.
-                    ' e você marcou '.$alternativa_marcada.' .<br>';
-            }
+    public function processarDados(){
 
 
-        }
+        $r = $this->input->post('assunto');
+        $data['records']=$this->questao_model->getMultiple($r);
+        $this->simulado($data);
+     // RESOLVER PROBLEMA CASO VAZIA
 
+    }
+
+    public function simulado($data){
+        $this->load->view('simulado', $data);
     }
     public function resultado()
     {
@@ -122,7 +99,7 @@ class Site extends CI_Controller {
 
         $this->load->model('questao_model');
         $data['records'] =  $this->questao_model->getAll();
-        $this->load->view('questao_jorge', $data);
+        $this->load->view('simulado', $data);
           //Carrega uma view
     }
 

@@ -20,6 +20,24 @@ class Questao_model extends CI_Model{
     function teste(){
         echo "TESTE";
     }
+
+    function getMultiple($id_marcados){
+        $data=array();
+        $this->db->where_in('id_assunto',$id_marcados);
+        $q= $this->db->get('questao');
+        if ($q->num_rows() >0){
+            foreach($q -> result() as $row){
+                $row->prova=strtoupper($row->prova);
+                $data [] = $row;
+            }}
+
+            return $data;
+
+
+
+    }
+
+
     function getAll(){
         $q = $this->db->get('questao');
         if ($q->num_rows() >0){
