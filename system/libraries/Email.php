@@ -400,7 +400,7 @@ class CI_Email {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Assign file anexos
+	 * Assign file attachments
 	 *
 	 * @access	public
 	 * @param	string
@@ -1006,7 +1006,7 @@ class CI_Email {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Build Final Body and anexos
+	 * Build Final Body and attachments
 	 *
 	 * @access	protected
 	 * @return	void
