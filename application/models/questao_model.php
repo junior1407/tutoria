@@ -79,4 +79,12 @@ class Questao_model extends CI_Model{
         }
     }
 
+    function deleteById(int $id){
+
+            $this->db->delete('questao2', array('id' => $id));
+    }
+
+
+
+
 } 
